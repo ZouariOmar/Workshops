@@ -1,0 +1,22 @@
+version: '1'
+services:
+  user-mangment-api:
+   build: .
+   ports : 
+   - 3010:9090
+   networks:
+    - 4sim1
+   depends_on:
+    - mongodb-service
+  mongodb-service:
+    image: mongo:5
+    ports:
+      - 27017:27017
+    volumes: 
+     - data:/data/db
+    networks:
+     - 4sim1
+volumes:
+ data:
+networks:
+ 4sim1:

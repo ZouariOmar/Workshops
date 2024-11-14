@@ -1,0 +1,263 @@
+{
+    "info": {
+      "name": "NestJS CRUD API",
+      "description": "Postman collection for categories, products, orders, and order items CRUD operations.",
+      "_postman_id": "example-id",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Categories",
+        "item": [
+          {
+            "name": "Get All Categories",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": "{{baseUrl}}/categories"
+            }
+          },
+          {
+            "name": "Create Category",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\"name\":\"New Category\"}"
+              },
+              "url": "{{baseUrl}}/categories"
+            }
+          },
+          {
+            "name": "Get Category by ID",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": "{{baseUrl}}/categories/:id"
+            }
+          },
+          {
+            "name": "Update Category",
+            "request": {
+              "method": "PUT",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\"name\":\"Updated Category\"}"
+              },
+              "url": "{{baseUrl}}/categories/:id"
+            }
+          },
+          {
+            "name": "Delete Category",
+            "request": {
+              "method": "DELETE",
+              "header": [],
+              "url": "{{baseUrl}}/categories/:id"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Products",
+        "item": [
+          {
+            "name": "Get All Products",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": "{{baseUrl}}/products"
+            }
+          },
+          {
+            "name": "Create Product",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\"name\":\"New Product\", \"categoryId\":1}"
+              },
+              "url": "{{baseUrl}}/products"
+            }
+          },
+          {
+            "name": "Get Product by ID",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": "{{baseUrl}}/products/:id"
+            }
+          },
+          {
+            "name": "Update Product",
+            "request": {
+              "method": "PUT",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\"name\":\"Updated Product\", \"categoryId\":1}"
+              },
+              "url": "{{baseUrl}}/products/:id"
+            }
+          },
+          {
+            "name": "Delete Product",
+            "request": {
+              "method": "DELETE",
+              "header": [],
+              "url": "{{baseUrl}}/products/:id"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Orders",
+        "item": [
+          {
+            "name": "Get All Orders",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": "{{baseUrl}}/orders"
+            }
+          },
+          {
+            "name": "Create Order",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\"customerId\":1, \"orderItems\": [{\"productId\":1, \"quantity\":2}]}"
+              },
+              "url": "{{baseUrl}}/orders"
+            }
+          },
+          {
+            "name": "Get Order by ID",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": "{{baseUrl}}/orders/:id"
+            }
+          },
+          {
+            "name": "Update Order",
+            "request": {
+              "method": "PUT",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\"customerId\":1, \"orderItems\": [{\"productId\":1, \"quantity\":3}]}"
+              },
+              "url": "{{baseUrl}}/orders/:id"
+            }
+          },
+          {
+            "name": "Delete Order",
+            "request": {
+              "method": "DELETE",
+              "header": [],
+              "url": "{{baseUrl}}/orders/:id"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Order Items",
+        "item": [
+          {
+            "name": "Get All Order Items",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": "{{baseUrl}}/order-items"
+            }
+          },
+          {
+            "name": "Create Order Item",
+            "request": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\"orderId\":1, \"productId\":1, \"quantity\":2}"
+              },
+              "url": "{{baseUrl}}/order-items"
+            }
+          },
+          {
+            "name": "Get Order Item by ID",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": "{{baseUrl}}/order-items/:id"
+            }
+          },
+          {
+            "name": "Update Order Item",
+            "request": {
+              "method": "PUT",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\"quantity\":3}"
+              },
+              "url": "{{baseUrl}}/order-items/:id"
+            }
+          },
+          {
+            "name": "Delete Order Item",
+            "request": {
+              "method": "DELETE",
+              "header": [],
+              "url": "{{baseUrl}}/order-items/:id"
+            }
+          }
+        ]
+      }
+    ]
+  }
+  
